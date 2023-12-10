@@ -1,3 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  html {
+    font-family: "DM Sans", system-ui, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    padding: 0;
+    margin: 0 auto;
+    min-width: 320px;
+    min-height: 100vh;
+    @apply bg-pallete-dark;
+  }
+
+  body {
+    margin: 0 auto;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    @apply bg-pallete-dark;
+  }
+}
+
+@layer components {
+  .text-heading {
+    @apply text-4xl;
+    font-size: 2rem;
+  }
+
+  .text-body {
+    @apply text-base;
+  }
+
+  .text-label {
+    @apply text-sm;
+  }
+
+  .text-small-text {
+    @apply text-sm;
+    font-size: 0.625rem;
+  }
+
+  .text-price {
+    @apply text-sm;
+  }
+}
+
+@layer utilities {
+  .hero-image {
+    background-image: url("assets/bg-cafe.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 75%;
+    width: 100vw;
+    height: 50vh;
+  }
+
+
+}
