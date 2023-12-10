@@ -9,7 +9,7 @@
   html {
     font-family: "DM Sans", system-ui, sans-serif;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 600;
 
     color-scheme: light dark;
 
@@ -29,9 +29,10 @@
 
   body {
     margin: 0 auto;
+    padding: 0;
     display: flex;
     place-items: center;
-    min-width: 320px;
+    width: 100%;
     min-height: 100vh;
     @apply bg-pallete-dark;
   }
@@ -41,10 +42,12 @@
   .text-heading {
     @apply text-4xl;
     font-size: 2rem;
+   
   }
 
   .text-body {
-    @apply text-base;
+    @apply text-base text-pallete-grey;
+   
   }
 
   .text-label {
@@ -63,12 +66,12 @@
 
 @layer utilities {
   .hero-image {
+    @apply md:max-w-full;
     background-image: url("assets/bg-cafe.jpg");
     background-repeat: no-repeat;
     background-size: 100% 75%;
     width: 100vw;
     height: 50vh;
+    
   }
-
-
 }
