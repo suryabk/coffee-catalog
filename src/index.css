@@ -66,6 +66,11 @@
   .badge {
     @apply inline-flex items-center gap-x-1.5 py-1 px-4 rounded-full text-xs bg-pallete-yellow text-pallete-lightDark font-bold;
   }
+
+  .button-active{
+    @apply bg-pallete-grey rounded-md py-2 px-4
+
+  }
 }
 
 @layer utilities {
