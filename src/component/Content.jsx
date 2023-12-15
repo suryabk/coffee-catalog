@@ -2,7 +2,7 @@ function Content() {
   return (
     <>
       <img
-        src="/public/vector.svg"
+        src="/vector.svg"
         alt=""
         className="absolute left-1/2 top-5 z-0 "
       />
