@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -55,12 +55,16 @@
   }
 
   .text-small-text {
-    @apply text-sm;
+    @apply text-xs;
     font-size: 0.625rem;
   }
 
   .text-price {
-    @apply text-sm;
+    @apply text-xs;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-x-1.5 py-1 px-4 rounded-full text-xs bg-pallete-yellow text-pallete-lightDark font-bold;
   }
 }
 
@@ -72,5 +76,21 @@
     background-size: 100% 75%;
     width: 100vw;
     height: 50vh;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #f6c768 94%, #0000) top/6.4px 6.4px no-repeat,
+      conic-gradient(#0000 30%, #f6c768);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 6.4px), #000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+  }
+
+  @keyframes spinner-c7wet2 {
+    100% {
+      transform: rotate(1turn);
+    }
   }
 }
