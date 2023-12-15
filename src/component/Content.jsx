@@ -1,6 +1,6 @@
-function Container() {
+function Content() {
   return (
-    <div className="bg-pallete-lightDark mx-auto relative px-4 sm:px-12 pt-16 bottom-48 w-5/6 sm:w-4/5 rounded-lg h-screen overflow-hidden">
+    <>
       <img
         src="/public/vector.svg"
         alt=""
@@ -14,10 +14,8 @@ function Container() {
           and shipped fresh weekly.
         </p>
       </div>
-
-      <div></div>
-    </div>
+    </>
   );
 }
 
-export default Container;
+export default Content;
