@@ -1,12 +1,36 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 import Star from "../assets/Star_fill.svg";
 import EmptyStar from "../assets/Star.svg";
 
 function Card({ coffee }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div className="container h-full flex flex-col gap-2 sm:w-1/4">
       <div className="relative ">
-        <img src={coffee.image} alt="" className="rounded-lg w-full" />
+        {/* skeleton image appears when the image has not fully rendered*/}
+        {!imageLoaded && (
+          <img
+            className={`rounded-lg w-full bg-pallete-grey animate-pulse ${
+              imageLoaded ? "hidden invisible" : "block"
+            }`}
+            height={48}
+            width={64}
+          />
+        )}
+
+        {/* actual image */}
+        <img
+          src={coffee.image}
+          alt=""
+          className={`rounded-lg w-full ${imageLoaded ? "block" : "hidden"}`}
+          onLoad={handleImageLoad}
+        />
         {coffee.popular && (
           <span className="badge text-label absolute top-2 left-2">
             Popular
@@ -28,9 +52,7 @@ function Card({ coffee }) {
             <h3 className="text-label text-pallete-light mx-1">
               {coffee.rating}
             </h3>
-            <span className="text-label text-pallete-grey">{`(${
-              coffee.votes
-            } votes)`}</span>
+            <span className="text-label text-pallete-grey">{`(${coffee.votes} votes)`}</span>
           </div>
         ) : (
           <div className="flex items-center">
@@ -38,9 +60,7 @@ function Card({ coffee }) {
             <h3 className="text-label text-pallete-light ml-2 mr-1">
               {coffee.rating}
             </h3>
-            <span className="text-label text-pallete-grey">{`(${
-              coffee.votes
-            } votes)`}</span>
+            <span className="text-label text-pallete-grey">{`(${coffee.votes} votes)`}</span>
           </div>
         )}
 
