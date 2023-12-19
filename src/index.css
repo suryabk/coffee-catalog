@@ -10,13 +10,6 @@
     font-family: "DM Sans", system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 600;
-
-    color-scheme: light dark;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   #root {
@@ -40,7 +33,7 @@
 
 @layer components {
   .text-heading {
-    @apply text-4xl;
+    @apply text-4xl text-pallete-light;
     font-size: 2rem;
 
   }
@@ -67,9 +60,8 @@
     @apply inline-flex items-center gap-x-1.5 py-1 px-4 rounded-full text-xs bg-pallete-yellow text-pallete-lightDark font-bold;
   }
 
-  .button-active{
+  .button-active {
     @apply bg-pallete-grey rounded-md py-2 px-4
-
   }
 }
 
