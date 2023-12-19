@@ -61,7 +61,11 @@ Card.propTypes = {
     name: PropTypes.string,
     image: PropTypes.string,
     price: PropTypes.string,
-    rating: PropTypes.number || null,
+    rating: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+      PropTypes.oneOf([null]),
+    ]),
     votes: PropTypes.number,
     popular: PropTypes.bool,
     available: PropTypes.bool,
